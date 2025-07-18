@@ -24,12 +24,12 @@ import net.io.fabric.util.CrystalUtils;
 import org.lwjgl.glfw.GLFW;
 
 
-public class AutoDtap extends Module implements PlayerTickListener, ItemUseListener
+public class MYS16Dtap extends Module implements PlayerTickListener, ItemUseListener
 {
 
     private final IntegerSetting placeInterval = IntegerSetting.Builder.newInstance()
-            .setName("placeInterval")
-            .setDescription("the interval between placing crystals (in tick)")
+            .setName("kecepatan crystal hitam")
+            .setDescription("kecepetan naro crystal")
             .setModule(this)
             .setValue(2)
             .setMin(0)
@@ -37,8 +37,8 @@ public class AutoDtap extends Module implements PlayerTickListener, ItemUseListe
             .setAvailability(() -> true)
             .build();
     private final IntegerSetting MaxCrystals = IntegerSetting.Builder.newInstance()
-            .setName("MaxCrystals")
-            .setDescription("the interval between breaking crystals (in tick)")
+            .setName("kecepatan ngancurin crystal hitam")
+            .setDescription("kecepatan ngancurin crystal")
             .setModule(this)
             .setValue(2)
             .setMin(1)
@@ -57,16 +57,16 @@ public class AutoDtap extends Module implements PlayerTickListener, ItemUseListe
             .build();
 
     private final BooleanSetting activateOnRightClick = BooleanSetting.Builder.newInstance()
-            .setName("activateOnRightClick")
-            .setDescription("will only activate on right click when enabled")
+            .setName("click kanan")
+            .setDescription("tahan click kanan kalo lu aktifin")
             .setModule(this)
             .setValue(false)
             .setAvailability(() -> true)
             .build();
 
     private final BooleanSetting stopOnKill = BooleanSetting.Builder.newInstance()
-            .setName("stopOnKill")
-            .setDescription("automatically stops crystalling when someone close to you dies")
+            .setName("berenti pas ngekill")
+            .setDescription("auto stop kalo lu ngekill goblok")
             .setModule(this)
             .setValue(false)
             .setAvailability(() -> true)
