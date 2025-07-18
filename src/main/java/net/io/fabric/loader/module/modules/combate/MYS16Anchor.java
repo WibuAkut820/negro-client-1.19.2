@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 public class MarlowAnchor extends Module implements PlayerTickListener
 {
     public MarlowAnchor() {
-        super("MarlowAnchor", "Anchor like marlow :3", false, Category.Combat);
+        super("MYS16Anchor", "Anchor kek MYS16 UwU", false, Category.Combat);
     }
 
     @Override
