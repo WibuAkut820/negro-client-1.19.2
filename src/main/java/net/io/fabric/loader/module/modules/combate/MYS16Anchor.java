@@ -11,7 +11,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 
-public class MarlowAnchor extends Module implements PlayerTickListener
+public class MYS16Anchor extends Module implements PlayerTickListener
 {
     public MarlowAnchor() {
         super("MYS16Anchor", "Anchor kek MYS16 UwU", false, Category.Combat);
