@@ -30,12 +30,12 @@ import static net.io.fabric.antarctica.MC;
 public class AHC extends Module implements PlayerTickListener {
 
     public AHC() {
-        super("AutoHitCrystal", "Credits to pycat", false, Category.Combat);
+        super("AutoHitCrystal", "goblok kalo gabisa spam crystal", false, Category.Combat);
     }
 
     private IntegerSetting firstCrystalInterval = IntegerSetting.Builder.newInstance()
-            .setName("First Crystal Interval")
-            .setDescription("interval of first crystal place after placing obsidian (in tick)")
+            .setName("crystal tick")
+            .setDescription("naro crystal habis naro obsi")
             .setModule(this)
             .setValue(1)
             .setMin(0)
@@ -44,8 +44,8 @@ public class AHC extends Module implements PlayerTickListener {
             .build();
 
     private final IntegerSetting placeInterval = IntegerSetting.Builder.newInstance()
-            .setName("Place Interval")
-            .setDescription("the interval between placing crystals (in tick)")
+            .setName("naro crystal")
+            .setDescription("naro crystal apalagi")
             .setModule(this)
             .setValue(0)
             .setMin(0)
@@ -54,8 +54,8 @@ public class AHC extends Module implements PlayerTickListener {
             .build();
 
     private final IntegerSetting breakInterval = IntegerSetting.Builder.newInstance()
-            .setName("Break Interval")
-            .setDescription("the interval between breaking crystals (in tick)")
+            .setName("ancurin crystal")
+            .setDescription("ancurin crystal apalagi")
             .setModule(this)
             .setValue(0)
             .setMin(0)
@@ -64,32 +64,32 @@ public class AHC extends Module implements PlayerTickListener {
             .build();
 
     private final BooleanSetting stopOnKill = BooleanSetting.Builder.newInstance()
-            .setName("Stop On Kill")
-            .setDescription("automatically stops crystalling when someone close to you dies")
+            .setName("berenti pas ngekill")
+            .setDescription("auto berenti spam pas lu kill lawan")
             .setModule(this)
             .setValue(false)
             .setAvailability(() -> true)
             .build();
 
     private final BooleanSetting workOnKeybind = BooleanSetting.Builder.newInstance()
-            .setName("Work On Keybind?")
-            .setDescription("work on keybind")
+            .setName("pake keybind?")
+            .setDescription("serah lu mau bind apaan")
             .setModule(this)
             .setValue(true)
             .setAvailability(() -> true)
             .build();
 
     private final BooleanSetting workWithTotem = BooleanSetting.Builder.newInstance()
-            .setName("Work With Totem")
-            .setDescription("work with totem")
+            .setName("guna pake totem")
+            .setDescription("guna pake totem apalagi")
             .setModule(this)
             .setValue(false)
             .setAvailability(() -> true)
             .build();
 
     public final KeybindSetting activateKey = new KeybindSetting.Builder()
-            .setName("Keybind")
-            .setDescription("the key to activate it")
+            .setName("keybind")
+            .setDescription("on off bind goblok")
             .setModule(this)
             .setValue(new Keybind("", GLFW.GLFW_KEY_UNKNOWN,false,false,null))
             .build();
