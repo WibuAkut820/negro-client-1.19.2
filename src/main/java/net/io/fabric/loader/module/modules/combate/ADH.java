@@ -46,7 +46,7 @@ public class ADH extends Module implements PlayerTickListener
     private boolean noOffhandTotem;
     
     public ADH() {
-        super("AutoDoubleHand", "Automatically double hand when you appear to be in a predicament", false, Category.Combat);
+        super("Auto Double Hand", "auto double hand tot ngentot", false, Category.Combat);
         this.dhandafterpop = BooleanSetting.Builder.newInstance().setName("dHand after Pop").setDescription("Automatically dHands afer a pop").setModule(this).setValue(true).setAvailability(() -> true).build();
         this.dhandAtHealth = BooleanSetting.Builder.newInstance().setName("dHand at Health").setDescription("when enabled, it will dhand at a sertain health").setModule(this).setValue(true).setAvailability(() -> true).build();
         final DecimalSetting.Builder setStep = DecimalSetting.Builder.newInstance().setName("dHand Health").setDescription("What Health to automatically doublehand on").setModule(this).setValue(2.0).setMin(1.0).setMax(20.0).setStep(1.0);
