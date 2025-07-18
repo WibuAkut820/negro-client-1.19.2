@@ -28,7 +28,7 @@ import net.io.fabric.util.AccessorUtils;
 
 import java.util.Objects;
 
-public class AutoInvTotemLegit extends Module implements PlayerTickListener
+public class HoverTotem extends Module implements PlayerTickListener
 {
     private BooleanSetting autoSwitch;
     private IntegerSetting delay;
@@ -39,8 +39,8 @@ public class AutoInvTotemLegit extends Module implements PlayerTickListener
     private KeybindSetting activateKey;
     private int invClock;
     
-    public AutoInvTotemLegit() {
-        super("InventoryTotemLegit", "Automatically puts on totems for you when you are in inventory", false, Category.Combat);
+    public HoverTotem() {
+        super("Hover tot Ngentot", "legit tot genjot", false, Category.Combat);
         this.autoSwitch = new BooleanSetting.Builder().setName("Auto Inventory Switch").setDescription("automatically switches to your totem slot").setModule(this).setValue(true).setAvailability(() -> true).build();
         IntegerSetting.Builder setMax = new IntegerSetting.Builder().setName("Delay").setDescription("the delay for auto switch after opening inventory").setModule(this).setValue(0).setMin(0).setMax(20);
         BooleanSetting autoSwitch = this.autoSwitch;
@@ -61,13 +61,13 @@ public class AutoInvTotemLegit extends Module implements PlayerTickListener
     public void onEnable() {
         super.onEnable();
         this.invClock = -1;
-        AutoInvTotemLegit.eventManager.add(PlayerTickListener.class, this);
+        HoverTotem.eventManager.add(PlayerTickListener.class, this);
     }
     
     @Override
     public void onDisable() {
         super.onDisable();
-        AutoInvTotemLegit.eventManager.remove(PlayerTickListener.class, this);
+        HoverTotem.eventManager.remove(PlayerTickListener.class, this);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class AutoInvTotemLegit extends Module implements PlayerTickListener
                 return;
             }
             if (((ItemStack)inv.main.get(SlotUnderMouse)).getItem() == Items.TOTEM_OF_UNDYING) {
-                AutoInvTotemLegit.mc.interactionManager.clickSlot(((PlayerScreenHandler)((InventoryScreen) AutoInvTotemLegit.mc.currentScreen).getScreenHandler()).syncId, SlotUnderMouse, 40, SlotActionType.SWAP, (PlayerEntity) AutoInvTotemLegit.mc.player);
+                HoverTotem.mc.interactionManager.clickSlot(((PlayerScreenHandler)((InventoryScreen) AutoInvTotemLegit.mc.currentScreen).getScreenHandler()).syncId, SlotUnderMouse, 40, SlotActionType.SWAP, (PlayerEntity) AutoInvTotemLegit.mc.player);
             }
         }
         else {
@@ -144,7 +144,7 @@ public class AutoInvTotemLegit extends Module implements PlayerTickListener
                 return;
             }
             if (((ItemStack)inv.main.get(SlotUnderMouse2)).getItem() == Items.TOTEM_OF_UNDYING) {
-                AutoInvTotemLegit.mc.interactionManager.clickSlot(((PlayerScreenHandler)((InventoryScreen) AutoInvTotemLegit.mc.currentScreen).getScreenHandler()).syncId, SlotUnderMouse2, inv.selectedSlot, SlotActionType.SWAP, (PlayerEntity) AutoInvTotemLegit.mc.player);
+                HoverTotem.mc.interactionManager.clickSlot(((PlayerScreenHandler)((InventoryScreen) AutoInvTotemLegit.mc.currentScreen).getScreenHandler()).syncId, SlotUnderMouse2, inv.selectedSlot, SlotActionType.SWAP, (PlayerEntity) AutoInvTotemLegit.mc.player);
             }
         }
     }
